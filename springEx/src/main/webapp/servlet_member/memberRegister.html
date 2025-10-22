@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+    <style>
+        p {
+            color: #808080;
+        }
+    </style>
+    <script type="text/javascript">
+        function fn_validate() {
+            let frmLogin = document.frmLogin;
+            let id = frmLogin.user_id.value;
+            let pwd = frmLogin.user_pwd.value;
+            let repwd = frmLogin.user_repwd.value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            if (!id || id.length < 3 || id.length > 20) {
+                alert('아이디를 올바르게 입력해주세요.');
+                return false;
+            }
+            if (!pwd) {
+                alert('비밀번호를 입력해주세요.');
+                return false;
+            }
+            if (pwd !== repwd) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return false;
+            }
+            if (!gender) {
+                alert('성별을 선택해주세요.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<h1>회원가입</h1>
+<p>아이디, 비밀번호, 성별, 취미를 입력해 주세요.</p>
+<hr />
+<form action="member" name="frmLogin" method="post" onsubmit="fn_validate()" enctype="UTF-8">
+    아이디
+    <div>
+        <input type="text" id='user_id' name="user_id" placeholder="예: gyulim_123" />
+        <p>영문, 숫자, 밑줄(_)만 사용 가능. 3~20자.</p>
+    </div>
+    비밀번호
+    <div>
+        <input type="password" id='user_pwd' name="user_pwd" placeholder="비밀번호 입력" />
+        <p>6자 이상을 권장합니다.</p>
+    </div>
+    비밀번호 확인
+    <div>
+        <input type="password" name="user_repwd" placeholder="비밀번호 재입력" />
+        <p>비밀번호를 다시 입력하세요.</p>
+    </div>
+    <fieldset>
+        <legend>성별</legend>
+        <div>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">female</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>취미 (복수 선택 가능)</legend>
+        <div>
+            <label><input type="checkbox" name="hobby" value="독서" /> 독서</label>
+            <label><input type="checkbox" name="hobby" value="스킨스쿠버" /> 스킨스쿠버</label>
+            <label><input type="checkbox" name="hobby" value="수영" /> 수영</label>
+            <label><input type="checkbox" name="hobby" value="자전거" /> 자전거</label>
+            <label><input type="checkbox" name="hobby" value="러닝" /> 러닝</label>
+        </div>
+    </fieldset>
+    <p>선택 사항입니다.</p>
+    <input type="submit" onClick="fn_validate()" id="register" value="가입하기" />
+    &nbsp&nbsp<input type="reset" id="retry" value="다시 입력" />
+</form>
+</body>
+</html>

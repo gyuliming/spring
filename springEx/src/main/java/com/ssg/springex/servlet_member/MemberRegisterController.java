@@ -18,8 +18,8 @@ public class MemberRegisterController extends HttpServlet {
         member.setUserId(req.getParameter("user_id"));
         member.setUserPwd(req.getParameter("user_pwd"));
         member.setUserRepwd(req.getParameter("user_repwd"));
-        member.setGender(req.getParameter("gender"));
-        member.setHobbies(req.getParameterValues("hobby"));
+        member.setGender(req.getParameter("gender")); // null 처리 해주기
+        member.setHobbies(req.getParameterValues("hobby")); // null 처리 해주기
 
         boolean success = false;
 

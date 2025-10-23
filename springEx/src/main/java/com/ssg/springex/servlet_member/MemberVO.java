@@ -1,6 +1,9 @@
 package com.ssg.springex.servlet_member;
 
-public class MemberInfo {
+import lombok.Data;
+
+@Data
+public class MemberVO {
     private String userId;
     private String userPwd;
     private String userRepwd;

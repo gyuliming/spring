@@ -1,8 +1,6 @@
 package com.ssg.webmvc.todo.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -10,6 +8,8 @@ import java.time.LocalDate;
 @Getter // 읽기만
 @Builder // 객체 생성 시 빌더 패턴 이용
 @ToString // 객체값 확인
+@NoArgsConstructor
+@AllArgsConstructor
 public class TodoVO {
     private Long tno;
     private String title;

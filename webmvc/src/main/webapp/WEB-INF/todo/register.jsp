@@ -9,10 +9,30 @@
 <html>
 <head>
     <title>Title</title>
+    <script type="text/javascript">
+        function fn_validate() {
+            let register = document.register;
+            let title = register.title.value;
+
+            if (!title || title === "") {
+                alert ("제목을 입력하세요.");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
-    <form action="/todo/register" method="post">
-        <button type="submit">글 등록 처리</button>
+    <form action="/todo/register" name="register" method="post">
+        <input type="text" name="title" id="title" placeholder="INSERT TITLE"><br>
+        <input
+                type="date"
+                name="dueDate"
+                id="dueDate"
+                value="2025-10-24"
+                min="2025-01-01"
+                max="2025-12-31" /><br>
+        <button type="reset">RESET</button>
+        <button type="submit" onclick="fn_validate()">REGISTER</button>
     </form>
 </body>
 </html>

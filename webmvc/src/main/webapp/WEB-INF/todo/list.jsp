@@ -12,7 +12,7 @@
     <title>Todo List Page</title>
 </head>
 <body>
-    <h1>List Page</h1>
+    <h1>Todo List</h1>
 <%--
     EL(Expression Language)
     ${list}
@@ -23,41 +23,43 @@
     <h4>${list[0].title}</h4>
     <h4>${list[0].dueDate}</h4>
     --%>
+    <form action="/todo/read" method="get">
     <ul>
-        <c:forEach var="dto" items="${list}">
-            <li>${dto}</li>
+        <c:forEach var="dto" items="${dtoList}">
+            <li><a href="/todo/read?tno=${dto.tno}">${dto.tno}</a> ${dto.title} ${dto.dueDate} ${dto.finished}</li>
         </c:forEach>
     </ul>
-    <ul>
-        <c:forEach var="num" begin="1" end="10">
-            <li>${num}</li>
-        </c:forEach>
-    </ul>
+    </form>
+<%--    <ul>--%>
+<%--        <c:forEach var="num" begin="1" end="10">--%>
+<%--            <li>${num}</li>--%>
+<%--        </c:forEach>--%>
+<%--    </ul>--%>
 
-    <c:if test="${list.size() % 2 == 0}">
-        짝수
-    </c:if>
-    <c:if test="${list.size() % 2 != 0}">
-        홀수
-    </c:if>
-    <br>
+<%--    <c:if test="${list.size() % 2 == 0}">--%>
+<%--        짝수--%>
+<%--    </c:if>--%>
+<%--    <c:if test="${list.size() % 2 != 0}">--%>
+<%--        홀수--%>
+<%--    </c:if>--%>
+<%--    <br>--%>
 
-    <c:choose>
-        <c:when test="${list.size() % 2 == 0}">
-            짝수
-        </c:when>
-        <c:otherwise>
-            홀수
-        </c:otherwise>
-    </c:choose>
-    <br>
+<%--    <c:choose>--%>
+<%--        <c:when test="${list.size() % 2 == 0}">--%>
+<%--            짝수--%>
+<%--        </c:when>--%>
+<%--        <c:otherwise>--%>
+<%--            홀수--%>
+<%--        </c:otherwise>--%>
+<%--    </c:choose>--%>
+<%--    <br>--%>
 
-    <c:set var="target" value="5"></c:set>
-        <c:forEach var="num" begin="1" end="10">
-            <c:if test="${num == target}">
-                num is target
-            </c:if>
-        </c:forEach>
+<%--    <c:set var="target" value="5"></c:set>--%>
+<%--        <c:forEach var="num" begin="1" end="10">--%>
+<%--            <c:if test="${num == target}">--%>
+<%--                num is target--%>
+<%--            </c:if>--%>
+<%--        </c:forEach>--%>
 
 </body>
 </html>

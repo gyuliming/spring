@@ -22,7 +22,7 @@ public enum ConnectionUtil {
         ds = new HikariDataSource(config);
     }
 
-    // ConnectionUtil.INSTANCE.getConnection(); 으로 Connection을 얻을 수 잇도록 구성
+    // ConnectionUtil.INSTANCE.getConnection(); 으로 Connection을 얻을 수 있도록 구성
     public Connection getConnection() throws Exception {
         return ds.getConnection();
     }

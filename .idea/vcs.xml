@@ -2,7 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/board" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/memberTest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/springEx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springWebmvc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/webmvc" vcs="Git" />
   </component>
 </project>

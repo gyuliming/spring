@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 
@@ -51,5 +52,21 @@ public class SampleController {
     public void ex04_1(TodoDTO todoDTO, Model model) {
         log.info(todoDTO);
         model.addAttribute("todoDTO", todoDTO);
+    }
+
+    @GetMapping("/ex05")
+    public String ex05(RedirectAttributes redirectAttributes) {
+        redirectAttributes.addAttribute("name", "ABCDEFGHIJKLMN");
+        redirectAttributes.addFlashAttribute("result", "success");
+        return "redirect:/ex06";
+    }
+
+    @GetMapping("/ex06")
+    public void ex06() {}
+
+    @GetMapping("/ex07")
+    public void ex07(int m1, String m2) {
+        log.info("m1 : " + m1);
+        log.info("m2 : " + m2);
     }
 }

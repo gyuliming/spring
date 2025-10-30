@@ -11,13 +11,13 @@
         http://www.springframework.org/schema/mvc
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-<!--    뷰 템플릿 역할 : 컨트롤러가 반환한 뷰 이름을 실제 JSP 경로로 변환 -->
+    <!--    뷰 템플릿 역할 : 컨트롤러가 반환한 뷰 이름을 실제 JSP 경로로 변환 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/> <!-- 경로 -->
         <property name="suffix" value=".jsp"/> <!-- jsp 파일 매핑 -->
     </bean>
 
-    <context:component-scan base-package="com.ssg.todoservice.controller"/>
+    <context:component-scan base-package="com.ssg.webmvcboard.controller"/>
 
     <mvc:annotation-driven conversion-service="conversionService"/>
 
@@ -26,8 +26,8 @@
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="formatters">
             <set>
-                <bean class="com.ssg.todoservice.controller.formatter.LocalDateFormatter"/>
-                <bean class="com.ssg.todoservice.controller.formatter.CheckboxFormatter"/>
+                <bean class="com.ssg.webmvcboard.controller.formatter.LocalDateFormatter"/>
+<!--                <bean class="com.ssg.webmvcboard.controller.formatter.CheckboxFormatter"/>-->
             </set>
         </property>
     </bean>

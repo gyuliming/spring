@@ -51,7 +51,7 @@ public class TodoController {
         return "redirect:/todo/list";
     }
 
-    @GetMapping({"/read", "modify"})
+    @GetMapping({"/read", "/modify"})
     public void read(Long tno, Model model) {
         TodoDTO todoDTO = todoService.getOne(tno);
         log.info(todoDTO);
